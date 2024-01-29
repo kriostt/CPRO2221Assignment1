@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+// Student entity with id, name, and major attributes
 public class Student {
     private int id;
     private String name;

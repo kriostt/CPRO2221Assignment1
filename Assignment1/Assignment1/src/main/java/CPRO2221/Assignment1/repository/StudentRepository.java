@@ -20,6 +20,7 @@ public class StudentRepository {
     public Student save(Student student) {
         Student s = new Student();
 
+        // Get new student's attribute values from request body and set the values into the new object in the list
         s.setId(student.getId());
         s.setName(student.getName());
         s.setMajor(student.getMajor());
@@ -35,16 +36,20 @@ public class StudentRepository {
 
     // Get a specific student by specifying their id
     public Student findById(int id) {
+        // Check every student in the list and if their id matches the specified id, return the student
         for (Student s : list) {
             if (s.getId() == id) {
                 return s;
             }
         }
+        // If student id is not found, return null
         return null;
     }
 
     // Update a specific student by specifying their id
     public Student update(int id, Student updatedStudent) {
+        // Check every student in the list and if their id matches the specified id,
+        // update their attributes using the values from the request body, and return the student
         for (Student s : list) {
             if (s.getId() == id) {
                 s.setId(updatedStudent.getId());
@@ -53,17 +58,21 @@ public class StudentRepository {
                 return s;
             }
         }
+        // If student id is not found, throw an exception to let user know
         throw new RuntimeException("Student ID " + id + " could not be found.");
     }
 
     // Delete a specific student by specifying their id
     public String delete(int id) {
+        // Check every student in the list and if their id matches the specified id,
+        // remove the student from the list and let the user know that the student has been deleted
         for (Student s : list) {
             if (s.getId() == id) {
                 list.remove(s);
                 return "Student with id " + id + " has been deleted.";
             }
         }
+        // If the student id is not found, return a statement to let user know
         return "Student ID " + id + " could not be found.";
     }
 }
