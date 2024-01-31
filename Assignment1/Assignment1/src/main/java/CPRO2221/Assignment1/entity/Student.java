@@ -17,5 +17,9 @@ import lombok.NoArgsConstructor;
 public class Student {
     private int id;
     private String name;
+    private int age;
+    private String gender;
+    private String email;
+    private String city;
     private String major;
 }
