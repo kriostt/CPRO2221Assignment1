@@ -17,7 +17,7 @@ public class StudentRepository {
     private final List<Student> list = new ArrayList<Student>();
 
     // Create a new object of Student and add it to the list of students
-    public Student save(Student student) {
+    public String save(Student student) {
         Student s = new Student();
 
         // Get new student's attribute values from request body and set the values into the new object in the list
@@ -26,7 +26,7 @@ public class StudentRepository {
         s.setMajor(student.getMajor());
 
         list.add(s);
-        return s;
+        return "Student " + s.getName() + " has been added.";
     }
 
     // Get the list of all students

@@ -21,7 +21,7 @@ public class Controller {
 
     // Create a new student
     @PostMapping("/create")
-    public Student createStudent(@RequestBody Student student) {
+    public String createStudent(@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
 

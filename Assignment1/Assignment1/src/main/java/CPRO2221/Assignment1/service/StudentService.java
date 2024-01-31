@@ -19,7 +19,7 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     // Save student by calling the save() function from StudentRepository
-    public Student saveStudent(Student student) {
+    public String saveStudent(Student student) {
         return studentRepository.save(student);
     }
 
