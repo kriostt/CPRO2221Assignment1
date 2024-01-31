@@ -51,7 +51,7 @@ public class StudentRepository {
     }
 
     // Update a specific student by specifying their id
-    public Student update(int id, Student updatedStudent) {
+    public String update(int id, Student updatedStudent) {
         // Check every student in the list and if their id matches the specified id,
         // update their attributes using the values from the request body, and return the student
         for (Student s : list) {
@@ -63,11 +63,11 @@ public class StudentRepository {
                 s.setEmail(updatedStudent.getEmail());
                 s.setCity(updatedStudent.getCity());
                 s.setMajor(updatedStudent.getMajor());
-                return s;
+                return "Student with id " + id + " has been updated.";
             }
         }
-        // If student id is not found, throw an exception to let user know
-        throw new RuntimeException("Student ID " + id + " could not be found.");
+        // If student id is not found, return a statement to let user know
+        return "Student ID " + id + " could not be found.";
     }
 
     // Delete a specific student by specifying their id

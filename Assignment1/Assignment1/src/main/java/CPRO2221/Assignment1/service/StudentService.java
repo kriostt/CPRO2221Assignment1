@@ -34,7 +34,7 @@ public class StudentService {
     }
 
     // Update student by calling the update() function from StudentRepository
-    public Student updateStudent(int id, Student student) {
+    public String updateStudent(int id, Student student) {
         return studentRepository.update(id, student);
     }
 
