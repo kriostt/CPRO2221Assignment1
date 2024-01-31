@@ -23,6 +23,10 @@ public class StudentRepository {
         // Get new student's attribute values from request body and set the values into the new object in the list
         s.setId(student.getId());
         s.setName(student.getName());
+        s.setAge(student.getAge());
+        s.setGender(student.getGender());
+        s.setEmail(student.getEmail());
+        s.setCity(student.getCity());
         s.setMajor(student.getMajor());
 
         list.add(s);
@@ -54,6 +58,10 @@ public class StudentRepository {
             if (s.getId() == id) {
                 s.setId(updatedStudent.getId());
                 s.setName(updatedStudent.getName());
+                s.setAge(updatedStudent.getAge());
+                s.setGender(updatedStudent.getGender());
+                s.setEmail(updatedStudent.getEmail());
+                s.setCity(updatedStudent.getCity());
                 s.setMajor(updatedStudent.getMajor());
                 return s;
             }
